@@ -96,19 +96,19 @@ protocols: [udp, multicast, tcp]
 # Available values are "no", "strict", "optional".
 encryption: "no"
 # Address of the TCP/RTSP listener. This is needed only when encryption is "no" or "optional".
-rtspAddress: :8554
+rtspAddress: :28554
 # Address of the TCP/TLS/RTSPS listener. This is needed only when encryption is "strict" or "optional".
-rtspsAddress: :8322
+rtspsAddress: :28322
 # Address of the UDP/RTP listener. This is needed only when "udp" is in protocols.
-rtpAddress: :8000
+rtpAddress: :28000
 # Address of the UDP/RTCP listener. This is needed only when "udp" is in protocols.
-rtcpAddress: :8001
+rtcpAddress: :28001
 # IP range of all UDP-multicast listeners. This is needed only when "multicast" is in protocols.
 multicastIPRange: 224.1.0.0/16
 # Port of all UDP-multicast/RTP listeners. This is needed only when "multicast" is in protocols.
-multicastRTPPort: 8002
+multicastRTPPort: 28002
 # Port of all UDP-multicast/RTCP listeners. This is needed only when "multicast" is in protocols.
-multicastRTCPPort: 8003
+multicastRTCPPort: 28003
 # Path to the server key. This is needed only when encryption is "strict" or "optional".
 # This can be generated with:
 # openssl genrsa -out server.key 2048
@@ -202,7 +202,7 @@ hlsDirectory: ''
 # Enable publishing and reading streams with the WebRTC protocol.
 webrtc: yes
 # Address of the WebRTC HTTP listener.
-webrtcAddress: :8889
+webrtcAddress: :28889
 # Enable TLS/HTTPS on the WebRTC server.
 webrtcEncryption: no
 # Path to the server key.
@@ -221,7 +221,7 @@ webrtcAllowOrigin: '*'
 webrtcTrustedProxies: []
 # Address of a local UDP listener that will receive connections.
 # Use a blank string to disable.
-webrtcLocalUDPAddress: :8189
+webrtcLocalUDPAddress: :28189
 # Address of a local TCP listener that will receive connections.
 # This is disabled by default since TCP is less efficient than UDP and
 # introduces a progressive delay when network is congested.
@@ -250,7 +250,7 @@ webrtcICEServers2: []
 # Enable publishing and reading streams with the SRT protocol.
 srt: yes
 # Address of the SRT listener.
-srtAddress: :8890
+srtAddress: :28890
 
 ###############################################
 # Default path settings
