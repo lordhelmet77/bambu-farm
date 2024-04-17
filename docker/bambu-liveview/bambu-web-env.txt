@@ -1,0 +1,70 @@
+quarkus.http.host=0.0.0.0
+quarkus.http.port=8080
+#Upload file size limit
+quarkus.http.limits.max-body-size=30M
+
+
+### Remote View ###
+
+
+# defaults to true, when false, disables remote view globally
+bambu.remote-view=true
+
+# defaults to true, when false, disables remote view for dashboard, but will still be available in detail view
+bambu.dashboard.remote-view=true
+
+# defaults to true, when false, disables per printer
+bambu.printers.myprinter1.stream.enable=true
+
+
+
+
+### Live View ###
+
+bambu.live-view-url=/_camerastream/
+
+# For each printer:
+#bambu.printers.PRINTER_ID.stream.live-view=true
+
+# Default LiveView URL
+#bambu.printers.PRINTER_ID.stream.url=${bambu.live-view-url}${PRINTER_ID}
+
+# Custom LiveView URL
+#bambu.printers.PRINTER_ID.stream.url=https://my_stream_domain.com/mystream
+
+
+
+### Printer 1###
+
+bambu.printers.myprinter1.enabled=true
+bambu.printers.myprinter1.name=X1C1 Left
+bambu.printers.myprinter1.model=x1c
+bambu.printers.myprinter1.device-id=00M09B411300102
+bambu.printers.myprinter1.access-code=929d7ffa
+bambu.printers.myprinter1.ip=192.168.0.221
+bambu.printers.myprinter1.stream.enable=true
+bambu.printers.myprinter1.use-ams=true
+bambu.printers.myprinter1.timelapse=true
+bambu.printers.myprinter1.bed-levelling=true
+bambu.printers.myprinter1.mqtt.port=8883
+bambu.printers.myprinter1.mqtt.url=ssl://${bambu.printers.myprinter1.ip}:${bambu.printers.myprinter1.mqtt.port}
+bambu.printers.myprinter1.mqtt.report-topic=device/${bambu.printers.myprinter1.device-id}/report
+bambu.printers.myprinter1.mqtt.request-topic=device/${bambu.printers.myprinter1.device-id}/request
+#Requesting full status interval
+bambu.printers.myprinter1.mqtt.full-status=10m
+bambu.printers.myprinter1.ftp.port=990
+bambu.printers.myprinter1.ftp.url=ftps://${bambu.printers.myprinter1.ip}:${bambu.printers.myprinter1.ftp.port}
+bambu.printers.myprinter1.ftp.log-commands=false
+bambu.printers.myprinter1.stream.port=6000
+bambu.printers.myprinter1.stream.live-view=false
+bambu.printers.myprinter1.stream.url=ssl://${bambu.printers.myprinter1.ip}:${bambu.printers.myprinter1.stream.port}
+#Restart stream if no images received interval
+bambu.printers.myprinter1.stream.watch-dog=5m
+#Enable Live View
+bambu.printers.myprinter1.stream.live-view=true
+
+
+### Users ###
+
+bambu.users.admin.password=admin
+bambu.users.admin.role=admin
