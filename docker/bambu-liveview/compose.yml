@@ -20,7 +20,7 @@ services:
         image: azul/zulu-openjdk:21-latest
         restart: always
         volumes:
-            - ./bambu-web-X.X.X-runner.jar:/bambu-web-runner.jar
+            - ./bambu-web-1.1.1-runner.jar:/bambu-web-runner.jar
             - ./bambu-web-env.txt:/.env
         ports:
             - '8081:8080'
@@ -44,9 +44,9 @@ services:
         depends_on:
             - mediamtx
         environment:
-            PRINTER_HOST: FIXME_this_is_my_printer_ip_or_host
-            PRINTER_ID: FIXME_this_is_my_printer_id
-            PRINTER_ACCESS_CODE: FIXME_this_is_my_printer_access_code
+            PRINTER_HOST: 192.168.0.221
+            PRINTER_ID: myprinter1
+            PRINTER_ACCESS_CODE: 929d7ffa
 
 #    printer2:
 #        extends:
