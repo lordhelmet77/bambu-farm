@@ -11,7 +11,7 @@ services:
             PRINTER_ACCESS_CODE: FIXME
             PRINTER_PORT: 322
             PRINTER_URL: /streaming/live/1
-            RTSP_SERVER: mediamtx:8554
+            RTSP_SERVER: mediamtx:28554
         entrypoint:
             - "bash"
             - "-c"
