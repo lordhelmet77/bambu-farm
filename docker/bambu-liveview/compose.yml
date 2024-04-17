@@ -11,10 +11,10 @@ services:
             #- '8554:8554' 
 
             #WebRTC
-            - '8189:8189/tcp'
-            - '8189:8189/udp'
+            - '28189:8189/tcp'
+            - '28189:8189/udp'
             #- '8888:8888'
-            - '8889:8889'
+            - '28889:8889'
 
     bambuweb:
         image: azul/zulu-openjdk:21-latest
@@ -23,7 +23,7 @@ services:
             - ./bambu-web-1.1.1-runner.jar:/bambu-web-runner.jar
             - ./bambu-web-env.txt:/.env
         ports:
-            - '8081:8080'
+            - '28081:8080'
         entrypoint: /usr/bin/java -Djdk.tls.useExtendedMasterSecret=false -jar bambu-web-runner.jar
 
     nginx:
@@ -32,7 +32,7 @@ services:
         volumes:
             - ./reverse-proxy.conf:/etc/nginx/conf.d/default.conf
         ports:
-            - '8080:80'
+            - '28080:80'
         depends_on:
             - mediamtx
             - bambuweb
