@@ -20,7 +20,7 @@ services:
         image: azul/zulu-openjdk:21-latest
         restart: always
         volumes:
-            - ./bambu-web-1.1.1-runner.jar:/bambu-web-runner.jar
+            #- ./bambu-web-1.1.1-runner.jar:/bambu-web-runner.jar
             - ./bambu-web-env.txt:/.env
         ports:
             - '28081:8080'
